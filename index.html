@@ -1,888 +1,1174 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>Clemence
-			Ciupek</title><style>
-/* cspell:disable-file */
-/* webkit printing magic: print all background colors */
-html {
-	-webkit-print-color-adjust: exact;
-}
-* {
-	box-sizing: border-box;
-	-webkit-print-color-adjust: exact;
-}
-
-html,
-body {
-	margin: 0;
-	padding: 0;
-}
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
-}
-
-body {
-	line-height: 1.5;
-	white-space: pre-wrap;
-}
-
-a,
-a.visited {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.pdf-relative-link-path {
-	font-size: 80%;
-	color: #444;
-}
-
-h1,
-h2,
-h3 {
-	letter-spacing: -0.01em;
-	line-height: 1.2;
-	font-weight: 600;
-	margin-bottom: 0;
-}
-
-.page-title {
-	font-size: 2.5rem;
-	font-weight: 700;
-	margin-top: 0;
-	margin-bottom: 0.75em;
-}
-
-h1 {
-	font-size: 1.875rem;
-	margin-top: 1.875rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-top: 1.5rem;
-}
-
-h3 {
-	font-size: 1.25rem;
-	margin-top: 1.25rem;
-}
-
-.source {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 1.5em;
-	word-break: break-all;
-}
-
-.callout {
-	border-radius: 3px;
-	padding: 1rem;
-}
-
-figure {
-	margin: 1.25em 0;
-	page-break-inside: avoid;
-}
-
-figcaption {
-	opacity: 0.5;
-	font-size: 85%;
-	margin-top: 0.5em;
-}
-
-mark {
-	background-color: transparent;
-}
-
-.indented {
-	padding-left: 1.5em;
-}
-
-hr {
-	background: transparent;
-	display: block;
-	width: 100%;
-	height: 1px;
-	visibility: visible;
-	border: none;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
-}
-
-img {
-	max-width: 100%;
-}
-
-@media only print {
-	img {
-		max-height: 100vh;
-		object-fit: contain;
-	}
-}
-
-@page {
-	margin: 1in;
-}
-
-.collection-content {
-	font-size: 0.875rem;
-}
-
-.column-list {
-	display: flex;
-	justify-content: space-between;
-}
-
-.column {
-	padding: 0 1em;
-}
-
-.column:first-child {
-	padding-left: 0;
-}
-
-.column:last-child {
-	padding-right: 0;
-}
-
-.table_of_contents-item {
-	display: block;
-	font-size: 0.875rem;
-	line-height: 1.3;
-	padding: 0.125rem;
-}
-
-.table_of_contents-indent-1 {
-	margin-left: 1.5rem;
-}
-
-.table_of_contents-indent-2 {
-	margin-left: 3rem;
-}
-
-.table_of_contents-indent-3 {
-	margin-left: 4.5rem;
-}
-
-.table_of_contents-link {
-	text-decoration: none;
-	opacity: 0.7;
-	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
-}
-
-table,
-th,
-td {
-	border: 1px solid rgba(55, 53, 47, 0.09);
-	border-collapse: collapse;
-}
-
-table {
-	border-left: none;
-	border-right: none;
-}
-
-th,
-td {
-	font-weight: normal;
-	padding: 0.25em 0.5em;
-	line-height: 1.5;
-	min-height: 1.5em;
-	text-align: left;
-}
-
-th {
-	color: rgba(55, 53, 47, 0.6);
-}
-
-ol,
-ul {
-	margin: 0;
-	margin-block-start: 0.6em;
-	margin-block-end: 0.6em;
-}
-
-li > ol:first-child,
-li > ul:first-child {
-	margin-block-start: 0.6em;
-}
-
-ul > li {
-	list-style: disc;
-}
-
-ul.to-do-list {
-	padding-inline-start: 0;
-}
-
-ul.to-do-list > li {
-	list-style: none;
-}
-
-.to-do-children-checked {
-	text-decoration: line-through;
-	opacity: 0.375;
-}
-
-ul.toggle > li {
-	list-style: none;
-}
-
-ul {
-	padding-inline-start: 1.7em;
-}
-
-ul > li {
-	padding-left: 0.1em;
-}
-
-ol {
-	padding-inline-start: 1.6em;
-}
-
-ol > li {
-	padding-left: 0.2em;
-}
-
-.mono ol {
-	padding-inline-start: 2em;
-}
-
-.mono ol > li {
-	text-indent: -0.4em;
-}
-
-.toggle {
-	padding-inline-start: 0em;
-	list-style-type: none;
-}
-
-/* Indent toggle children */
-.toggle > li > details {
-	padding-left: 1.7em;
-}
-
-.toggle > li > details > summary {
-	margin-left: -1.1em;
-}
-
-.selected-value {
-	display: inline-block;
-	padding: 0 0.5em;
-	background: rgba(206, 205, 202, 0.5);
-	border-radius: 3px;
-	margin-right: 0.5em;
-	margin-top: 0.3em;
-	margin-bottom: 0.3em;
-	white-space: nowrap;
-}
-
-.collection-title {
-	display: inline-block;
-	margin-right: 1em;
-}
-
-.page-description {
-    margin-bottom: 2em;
-}
-
-.simple-table {
-	margin-top: 1em;
-	font-size: 0.875rem;
-	empty-cells: show;
-}
-.simple-table td {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table th {
-	height: 29px;
-	min-width: 120px;
-}
-
-.simple-table-header-color {
-	background: rgb(247, 246, 243);
-	color: black;
-}
-.simple-table-header {
-	font-weight: 500;
-}
-
-time {
-	opacity: 0.5;
-}
-
-.icon {
-	display: inline-block;
-	max-width: 1.2em;
-	max-height: 1.2em;
-	text-decoration: none;
-	vertical-align: text-bottom;
-	margin-right: 0.5em;
-}
-
-img.icon {
-	border-radius: 3px;
-}
-
-.user-icon {
-	width: 1.5em;
-	height: 1.5em;
-	border-radius: 100%;
-	margin-right: 0.5rem;
-}
-
-.user-icon-inner {
-	font-size: 0.8em;
-}
-
-.text-icon {
-	border: 1px solid #000;
-	text-align: center;
-}
-
-.page-cover-image {
-	display: block;
-	object-fit: cover;
-	width: 100%;
-	max-height: 30vh;
-}
-
-.page-header-icon {
-	font-size: 3rem;
-	margin-bottom: 1rem;
-}
-
-.page-header-icon-with-cover {
-	margin-top: -0.72em;
-	margin-left: 0.07em;
-}
-
-.page-header-icon img {
-	border-radius: 3px;
-}
-
-.link-to-page {
-	margin: 1em 0;
-	padding: 0;
-	border: none;
-	font-weight: 500;
-}
-
-p > .user {
-	opacity: 0.5;
-}
-
-td > .user,
-td > time {
-	white-space: nowrap;
-}
-
-input[type="checkbox"] {
-	transform: scale(1.5);
-	margin-right: 0.6em;
-	vertical-align: middle;
-}
-
-p {
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
-}
-
-.image {
-	border: none;
-	margin: 1.5em 0;
-	padding: 0;
-	border-radius: 0;
-	text-align: center;
-}
-
-.code,
-code {
-	background: rgba(135, 131, 120, 0.15);
-	border-radius: 3px;
-	padding: 0.2em 0.4em;
-	border-radius: 3px;
-	font-size: 85%;
-	tab-size: 2;
-}
-
-code {
-	color: #eb5757;
-}
-
-.code {
-	padding: 1.5em 1em;
-}
-
-.code-wrap {
-	white-space: pre-wrap;
-	word-break: break-all;
-}
-
-.code > code {
-	background: none;
-	padding: 0;
-	font-size: 100%;
-	color: inherit;
-}
-
-blockquote {
-	font-size: 1.25em;
-	margin: 1em 0;
-	padding-left: 1em;
-	border-left: 3px solid rgb(55, 53, 47);
-}
-
-.bookmark {
-	text-decoration: none;
-	max-height: 8em;
-	padding: 0;
-	display: flex;
-	width: 100%;
-	align-items: stretch;
-}
-
-.bookmark-title {
-	font-size: 0.85em;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	height: 1.75em;
-	white-space: nowrap;
-}
-
-.bookmark-text {
-	display: flex;
-	flex-direction: column;
-}
-
-.bookmark-info {
-	flex: 4 1 180px;
-	padding: 12px 14px 14px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.bookmark-image {
-	width: 33%;
-	flex: 1 1 180px;
-	display: block;
-	position: relative;
-	object-fit: cover;
-	border-radius: 1px;
-}
-
-.bookmark-description {
-	color: rgba(55, 53, 47, 0.6);
-	font-size: 0.75em;
-	overflow: hidden;
-	max-height: 4.5em;
-	word-break: break-word;
-}
-
-.bookmark-href {
-	font-size: 0.75em;
-	margin-top: 0.25em;
-}
-
-.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
-.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
-.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
-.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
-.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
-.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
-.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
-.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
-.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
-.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
-.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
-.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
-.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
-.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
-.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
-.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
-.highlight-default {
-	color: rgba(55, 53, 47, 1);
-}
-.highlight-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.highlight-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.highlight-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.highlight-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.highlight-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.highlight-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.highlight-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.highlight-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.highlight-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.highlight-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.highlight-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.highlight-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.highlight-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.highlight-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.highlight-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.highlight-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.highlight-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.highlight-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.block-color-default {
-	color: inherit;
-	fill: inherit;
-}
-.block-color-gray {
-	color: rgba(120, 119, 116, 1);
-	fill: rgba(120, 119, 116, 1);
-}
-.block-color-brown {
-	color: rgba(159, 107, 83, 1);
-	fill: rgba(159, 107, 83, 1);
-}
-.block-color-orange {
-	color: rgba(217, 115, 13, 1);
-	fill: rgba(217, 115, 13, 1);
-}
-.block-color-yellow {
-	color: rgba(203, 145, 47, 1);
-	fill: rgba(203, 145, 47, 1);
-}
-.block-color-teal {
-	color: rgba(68, 131, 97, 1);
-	fill: rgba(68, 131, 97, 1);
-}
-.block-color-blue {
-	color: rgba(51, 126, 169, 1);
-	fill: rgba(51, 126, 169, 1);
-}
-.block-color-purple {
-	color: rgba(144, 101, 176, 1);
-	fill: rgba(144, 101, 176, 1);
-}
-.block-color-pink {
-	color: rgba(193, 76, 138, 1);
-	fill: rgba(193, 76, 138, 1);
-}
-.block-color-red {
-	color: rgba(212, 76, 71, 1);
-	fill: rgba(212, 76, 71, 1);
-}
-.block-color-gray_background {
-	background: rgba(241, 241, 239, 1);
-}
-.block-color-brown_background {
-	background: rgba(244, 238, 238, 1);
-}
-.block-color-orange_background {
-	background: rgba(251, 236, 221, 1);
-}
-.block-color-yellow_background {
-	background: rgba(251, 243, 219, 1);
-}
-.block-color-teal_background {
-	background: rgba(237, 243, 236, 1);
-}
-.block-color-blue_background {
-	background: rgba(231, 243, 248, 1);
-}
-.block-color-purple_background {
-	background: rgba(244, 240, 247, 0.8);
-}
-.block-color-pink_background {
-	background: rgba(249, 238, 243, 0.8);
-}
-.block-color-red_background {
-	background: rgba(253, 235, 236, 1);
-}
-.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
-.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
-.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
-.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
-.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
-.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
-.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
-.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
-.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
-.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
-.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
-.select-value-color-pageGlass { background-color: undefined; }
-.select-value-color-washGlass { background-color: undefined; }
-
-.checkbox {
-	display: inline-flex;
-	vertical-align: text-bottom;
-	width: 16;
-	height: 16;
-	background-size: 16px;
-	margin-left: 2px;
-	margin-right: 5px;
-}
-
-.checkbox-on {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-
-.checkbox-off {
-	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
-}
-	
-</style></head><body><article id="543f8a7a-2141-44fb-a87a-4cd7a0db71d0"
-			class="page sans"><header><div class="page-header-icon undefined"><img
-						class="icon"
-						src="assets/mciupek.png" /></div><h1
-					class="page-title">Clemence Ciupek</h1><p class="page-description"></p></header><div
-				class="page-body"><p id="40422c1d-882f-4192-91f2-a8dc3f1c219d" class>
-				</p><figure class="block-color-gray_background callout"
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Clemence
+			Ciupek</title>
+		<style>
+		/* cspell:disable-file */
+		/* webkit printing magic: print all background colors */
+		html {
+			-webkit-print-color-adjust: exact;
+		}
+
+		* {
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		@media only screen {
+			body {
+				margin: 2em auto;
+				max-width: 900px;
+				color: rgb(55, 53, 47);
+			}
+		}
+
+		body {
+			line-height: 1.5;
+			white-space: pre-wrap;
+		}
+
+		a,
+		a.visited {
+			color: inherit;
+			text-decoration: underline;
+		}
+
+		.pdf-relative-link-path {
+			font-size: 80%;
+			color: #444;
+		}
+
+		h1,
+		h2,
+		h3 {
+			letter-spacing: -0.01em;
+			line-height: 1.2;
+			font-weight: 600;
+			margin-bottom: 0;
+		}
+
+		.page-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin-top: 0;
+			margin-bottom: 0.75em;
+		}
+
+		h1 {
+			font-size: 1.875rem;
+			margin-top: 1.875rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			margin-top: 1.5rem;
+		}
+
+		h3 {
+			font-size: 1.25rem;
+			margin-top: 1.25rem;
+		}
+
+		.source {
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			padding: 1.5em;
+			word-break: break-all;
+		}
+
+		.callout {
+			border-radius: 3px;
+			padding: 1rem;
+		}
+
+		figure {
+			margin: 1.25em 0;
+			page-break-inside: avoid;
+		}
+
+		figcaption {
+			opacity: 0.5;
+			font-size: 85%;
+			margin-top: 0.5em;
+		}
+
+		mark {
+			background-color: transparent;
+		}
+
+		.indented {
+			padding-left: 1.5em;
+		}
+
+		hr {
+			background: transparent;
+			display: block;
+			width: 100%;
+			height: 1px;
+			visibility: visible;
+			border: none;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@media only print {
+			img {
+				max-height: 100vh;
+				object-fit: contain;
+			}
+		}
+
+		@page {
+			margin: 1in;
+		}
+
+		.collection-content {
+			font-size: 0.875rem;
+		}
+
+		.column-list {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.column {
+			padding: 0 1em;
+		}
+
+		.column:first-child {
+			padding-left: 0;
+		}
+
+		.column:last-child {
+			padding-right: 0;
+		}
+
+		.table_of_contents-item {
+			display: block;
+			font-size: 0.875rem;
+			line-height: 1.3;
+			padding: 0.125rem;
+		}
+
+		.table_of_contents-indent-1 {
+			margin-left: 1.5rem;
+		}
+
+		.table_of_contents-indent-2 {
+			margin-left: 3rem;
+		}
+
+		.table_of_contents-indent-3 {
+			margin-left: 4.5rem;
+		}
+
+		.table_of_contents-link {
+			text-decoration: none;
+			opacity: 0.7;
+			border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+		}
+
+		table,
+		th,
+		td {
+			border: 1px solid rgba(55, 53, 47, 0.09);
+			border-collapse: collapse;
+		}
+
+		table {
+			border-left: none;
+			border-right: none;
+		}
+
+		th,
+		td {
+			font-weight: normal;
+			padding: 0.25em 0.5em;
+			line-height: 1.5;
+			min-height: 1.5em;
+			text-align: left;
+		}
+
+		th {
+			color: rgba(55, 53, 47, 0.6);
+		}
+
+		ol,
+		ul {
+			margin: 0;
+			margin-block-start: 0.6em;
+			margin-block-end: 0.6em;
+		}
+
+		li>ol:first-child,
+		li>ul:first-child {
+			margin-block-start: 0.6em;
+		}
+
+		ul>li {
+			list-style: disc;
+		}
+
+		ul.to-do-list {
+			padding-inline-start: 0;
+		}
+
+		ul.to-do-list>li {
+			list-style: none;
+		}
+
+		.to-do-children-checked {
+			text-decoration: line-through;
+			opacity: 0.375;
+		}
+
+		ul.toggle>li {
+			list-style: none;
+		}
+
+		ul {
+			padding-inline-start: 1.7em;
+		}
+
+		ul>li {
+			padding-left: 0.1em;
+		}
+
+		ol {
+			padding-inline-start: 1.6em;
+		}
+
+		ol>li {
+			padding-left: 0.2em;
+		}
+
+		.mono ol {
+			padding-inline-start: 2em;
+		}
+
+		.mono ol>li {
+			text-indent: -0.4em;
+		}
+
+		.toggle {
+			padding-inline-start: 0em;
+			list-style-type: none;
+		}
+
+		/* Indent toggle children */
+		.toggle>li>details {
+			padding-left: 1.7em;
+		}
+
+		.toggle>li>details>summary {
+			margin-left: -1.1em;
+		}
+
+		.selected-value {
+			display: inline-block;
+			padding: 0 0.5em;
+			background: rgba(206, 205, 202, 0.5);
+			border-radius: 3px;
+			margin-right: 0.5em;
+			margin-top: 0.3em;
+			margin-bottom: 0.3em;
+			white-space: nowrap;
+		}
+
+		.collection-title {
+			display: inline-block;
+			margin-right: 1em;
+		}
+
+		.page-description {
+			margin-bottom: 2em;
+		}
+
+		.simple-table {
+			margin-top: 1em;
+			font-size: 0.875rem;
+			empty-cells: show;
+		}
+
+		.simple-table td {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table th {
+			height: 29px;
+			min-width: 120px;
+		}
+
+		.simple-table-header-color {
+			background: rgb(247, 246, 243);
+			color: black;
+		}
+
+		.simple-table-header {
+			font-weight: 500;
+		}
+
+		time {
+			opacity: 0.5;
+		}
+
+		.icon {
+			display: inline-block;
+			max-width: 1.2em;
+			max-height: 1.2em;
+			text-decoration: none;
+			vertical-align: text-bottom;
+			margin-right: 0.5em;
+		}
+
+		img.icon {
+			border-radius: 3px;
+		}
+
+		.user-icon {
+			width: 1.5em;
+			height: 1.5em;
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		.user-icon-inner {
+			font-size: 0.8em;
+		}
+
+		.text-icon {
+			border: 1px solid #000;
+			text-align: center;
+		}
+
+		.page-cover-image {
+			display: block;
+			object-fit: cover;
+			width: 100%;
+			max-height: 30vh;
+		}
+
+		.page-header-icon {
+			font-size: 3rem;
+			margin-bottom: 1rem;
+		}
+
+		.page-header-icon-with-cover {
+			margin-top: -0.72em;
+			margin-left: 0.07em;
+		}
+
+		.page-header-icon img {
+			border-radius: 3px;
+		}
+
+		.link-to-page {
+			margin: 1em 0;
+			padding: 0;
+			border: none;
+			font-weight: 500;
+		}
+
+		p>.user {
+			opacity: 0.5;
+		}
+
+		td>.user,
+		td>time {
+			white-space: nowrap;
+		}
+
+		input[type="checkbox"] {
+			transform: scale(1.5);
+			margin-right: 0.6em;
+			vertical-align: middle;
+		}
+
+		p {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
+		}
+
+		.image {
+			border: none;
+			margin: 1.5em 0;
+			padding: 0;
+			border-radius: 0;
+			text-align: center;
+		}
+
+		.code,
+		code {
+			background: rgba(135, 131, 120, 0.15);
+			border-radius: 3px;
+			padding: 0.2em 0.4em;
+			border-radius: 3px;
+			font-size: 85%;
+			tab-size: 2;
+		}
+
+		code {
+			color: #eb5757;
+		}
+
+		.code {
+			padding: 1.5em 1em;
+		}
+
+		.code-wrap {
+			white-space: pre-wrap;
+			word-break: break-all;
+		}
+
+		.code>code {
+			background: none;
+			padding: 0;
+			font-size: 100%;
+			color: inherit;
+		}
+
+		blockquote {
+			font-size: 1.25em;
+			margin: 1em 0;
+			padding-left: 1em;
+			border-left: 3px solid rgb(55, 53, 47);
+		}
+
+		.bookmark {
+			text-decoration: none;
+			max-height: 8em;
+			padding: 0;
+			display: flex;
+			width: 100%;
+			align-items: stretch;
+		}
+
+		.bookmark-title {
+			font-size: 0.85em;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			height: 1.75em;
+			white-space: nowrap;
+		}
+
+		.bookmark-text {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.bookmark-info {
+			flex: 4 1 180px;
+			padding: 12px 14px 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.bookmark-image {
+			width: 33%;
+			flex: 1 1 180px;
+			display: block;
+			position: relative;
+			object-fit: cover;
+			border-radius: 1px;
+		}
+
+		.bookmark-description {
+			color: rgba(55, 53, 47, 0.6);
+			font-size: 0.75em;
+			overflow: hidden;
+			max-height: 4.5em;
+			word-break: break-word;
+		}
+
+		.bookmark-href {
+			font-size: 0.75em;
+			margin-top: 0.25em;
+		}
+
+		.sans {
+			font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+		}
+
+		.code {
+			font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace;
+		}
+
+		.serif {
+			font-family: Lyon-Text, Georgia, ui-serif, serif;
+		}
+
+		.mono {
+			font-family: iawriter-mono, Nitti, Menlo, Courier, monospace;
+		}
+
+		.pdf .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .sans {
+			font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+		}
+
+		.pdf .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .code {
+			font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.pdf .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .serif {
+			font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR';
+		}
+
+		.pdf .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP';
+		}
+
+		.pdf:lang(zh-CN) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC';
+		}
+
+		.pdf:lang(zh-TW) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC';
+		}
+
+		.pdf:lang(ko-KR) .mono {
+			font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR';
+		}
+
+		.highlight-default {
+			color: rgba(55, 53, 47, 1);
+		}
+
+		.highlight-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.highlight-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.highlight-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.highlight-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.highlight-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.highlight-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.highlight-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.highlight-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.highlight-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.highlight-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.highlight-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.highlight-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.highlight-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.highlight-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.highlight-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.highlight-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.highlight-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.highlight-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.block-color-default {
+			color: inherit;
+			fill: inherit;
+		}
+
+		.block-color-gray {
+			color: rgba(120, 119, 116, 1);
+			fill: rgba(120, 119, 116, 1);
+		}
+
+		.block-color-brown {
+			color: rgba(159, 107, 83, 1);
+			fill: rgba(159, 107, 83, 1);
+		}
+
+		.block-color-orange {
+			color: rgba(217, 115, 13, 1);
+			fill: rgba(217, 115, 13, 1);
+		}
+
+		.block-color-yellow {
+			color: rgba(203, 145, 47, 1);
+			fill: rgba(203, 145, 47, 1);
+		}
+
+		.block-color-teal {
+			color: rgba(68, 131, 97, 1);
+			fill: rgba(68, 131, 97, 1);
+		}
+
+		.block-color-blue {
+			color: rgba(51, 126, 169, 1);
+			fill: rgba(51, 126, 169, 1);
+		}
+
+		.block-color-purple {
+			color: rgba(144, 101, 176, 1);
+			fill: rgba(144, 101, 176, 1);
+		}
+
+		.block-color-pink {
+			color: rgba(193, 76, 138, 1);
+			fill: rgba(193, 76, 138, 1);
+		}
+
+		.block-color-red {
+			color: rgba(212, 76, 71, 1);
+			fill: rgba(212, 76, 71, 1);
+		}
+
+		.block-color-gray_background {
+			background: rgba(241, 241, 239, 1);
+		}
+
+		.block-color-brown_background {
+			background: rgba(244, 238, 238, 1);
+		}
+
+		.block-color-orange_background {
+			background: rgba(251, 236, 221, 1);
+		}
+
+		.block-color-yellow_background {
+			background: rgba(251, 243, 219, 1);
+		}
+
+		.block-color-teal_background {
+			background: rgba(237, 243, 236, 1);
+		}
+
+		.block-color-blue_background {
+			background: rgba(231, 243, 248, 1);
+		}
+
+		.block-color-purple_background {
+			background: rgba(244, 240, 247, 0.8);
+		}
+
+		.block-color-pink_background {
+			background: rgba(249, 238, 243, 0.8);
+		}
+
+		.block-color-red_background {
+			background: rgba(253, 235, 236, 1);
+		}
+
+		.select-value-color-interactiveBlue {
+			background-color: rgba(35, 131, 226, .07);
+		}
+
+		.select-value-color-pink {
+			background-color: rgba(245, 224, 233, 1);
+		}
+
+		.select-value-color-purple {
+			background-color: rgba(232, 222, 238, 1);
+		}
+
+		.select-value-color-green {
+			background-color: rgba(219, 237, 219, 1);
+		}
+
+		.select-value-color-gray {
+			background-color: rgba(227, 226, 224, 1);
+		}
+
+		.select-value-color-translucentGray {
+			background-color: rgba(255, 255, 255, 0.0375);
+		}
+
+		.select-value-color-orange {
+			background-color: rgba(250, 222, 201, 1);
+		}
+
+		.select-value-color-brown {
+			background-color: rgba(238, 224, 218, 1);
+		}
+
+		.select-value-color-red {
+			background-color: rgba(255, 226, 221, 1);
+		}
+
+		.select-value-color-yellow {
+			background-color: rgba(253, 236, 200, 1);
+		}
+
+		.select-value-color-blue {
+			background-color: rgba(211, 229, 239, 1);
+		}
+
+		.select-value-color-pageGlass {
+			background-color: undefined;
+		}
+
+		.select-value-color-washGlass {
+			background-color: undefined;
+		}
+
+		.checkbox {
+			display: inline-flex;
+			vertical-align: text-bottom;
+			width: 16;
+			height: 16;
+			background-size: 16px;
+			margin-left: 2px;
+			margin-right: 5px;
+		}
+
+		.checkbox-on {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+
+		.checkbox-off {
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+		}
+	</style>
+	</head>
+
+	<body>
+		<article id="543f8a7a-2141-44fb-a87a-4cd7a0db71d0" class="page sans">
+			<header>
+				<div class="page-header-icon undefined"><img class="icon"
+						src="assets/mciupek.png" /></div>
+				<h1 class="page-title">Clemence Ciupek</h1>
+				<p class="page-description"></p>
+			</header>
+			<div class="page-body">
+				<p id="40422c1d-882f-4192-91f2-a8dc3f1c219d" class>
+				</p>
+				<figure class="block-color-gray_background callout"
 					style="white-space:pre-wrap;display:flex"
-					id="d43e281a-023f-42a7-8641-1b9abad0d6bc"><div style="font-size:1.5em"><span
-							class="icon">👋🏻</span></div><div style="width:100%">Hi, I’m Clémence, a
-						passionate Decision Scientist with expertise in AI and data analytics,
-						currently working at Vinted in Digital Marketing DSA. I am seeking a
-						challenging role as an Analytics Engineer to leverage my technical skills.</div></figure><h1
-					id="7622e476-15ce-44f6-a1ad-0b4a1fded1b9" class>Contact information</h1><hr
-					id="0a41d0e8-3136-4823-8e9d-73fe08ee59f5" /><div
-					id="16328ee8-7a76-441f-8cec-6aafc78c0157" class="column-list"><div
-						id="755e4213-e5ec-4d5d-9d38-f9b3b0f9c7e4" style="width:50%" class="column"><p
-							id="3e45d719-296b-4970-bb22-ac673315cd47" class>📞 <a
-								href="https://www.notion.sotel::+33665198281">(+33)6 65 19 82 81</a></p><p
-							id="d5d3d92b-c813-48fe-b297-48beeb132376" class>📧 <a
-								href="mailto:mc@42ai.fr">mc@42ai.fr</a></p></div><div
-						id="84b700cd-2c60-4604-873d-4974685333e0" style="width:50%" class="column"><p
-							id="af0b6c0d-05c4-4d03-9a61-fd86cd6e70ff" class>💾 <a
-								href="https://github.com/MCCiupek">Git Hub</a></p><p
-							id="b8bce59c-4991-4b02-902d-6561160929df" class>🔗 <a
-								href="https://www.linkedin.com/in/marie-cl%C3%A9mence-ciupek-9b76a8108/">LinkedIn</a></p></div></div><h1
-					id="f7fef3a0-5273-454f-8122-0fb284f75aa6" class>Education</h1><hr
-					id="c95e4c29-d484-44ea-b7cf-880280997208" /><details open><summary
-						style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Computer
-						Science @42Paris</summary><div class="indented"><p
-							id="a9aba0de-334d-44ca-b450-d34a91848955" class><mark
-								class="highlight-gray">Ecole 42, </mark><mark class="highlight-gray"><em>Paris,
+					id="d43e281a-023f-42a7-8641-1b9abad0d6bc">
+					<div style="font-size:1.5em"><span class="icon">👋🏻</span></div>
+					<div style="width:100%">Hi, I’m Clémence, a passionate Decision Scientist
+						with expertise in AI and data analytics, currently working at Vinted in
+						Digital Marketing DSA. I am seeking a challenging role as an Analytics
+						Engineer to leverage my technical skills.</div>
+				</figure>
+				<h1 id="7622e476-15ce-44f6-a1ad-0b4a1fded1b9" class>Contact information</h1>
+				<hr id="0a41d0e8-3136-4823-8e9d-73fe08ee59f5" />
+				<div id="16328ee8-7a76-441f-8cec-6aafc78c0157" class="column-list">
+					<div id="755e4213-e5ec-4d5d-9d38-f9b3b0f9c7e4" style="width:50%"
+						class="column">
+						<p id="3e45d719-296b-4970-bb22-ac673315cd47" class>📞 (+33)6 65 19 82 81</p>
+						<p id="d5d3d92b-c813-48fe-b297-48beeb132376" class>📧 <a
+								href="mailto:mc@42ai.fr">mc@42ai.fr</a></p>
+					</div>
+					<div id="84b700cd-2c60-4604-873d-4974685333e0" style="width:50%"
+						class="column">
+						<p id="af0b6c0d-05c4-4d03-9a61-fd86cd6e70ff" class>👾 <a
+								href="https://github.com/MCCiupek">Git
+								Hub</a></p>
+						<p id="b8bce59c-4991-4b02-902d-6561160929df" class>🔗 <a
+								href="https://www.linkedin.com/in/marie-cl%C3%A9mence-ciupek-9b76a8108/">LinkedIn</a></p>
+					</div>
+				</div>
+				<h1 id="f7fef3a0-5273-454f-8122-0fb284f75aa6" class>Education</h1>
+				<hr id="c95e4c29-d484-44ea-b7cf-880280997208" />
+				<details open>
+					<summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Computer
+						Science @42Paris</summary>
+					<div class="indented">
+						<p id="a9aba0de-334d-44ca-b450-d34a91848955" class><mark
+								class="highlight-gray">Ecole 42,
+							</mark><mark class="highlight-gray"><em>Paris,
 									France</em></mark><mark class="highlight-gray"> - </mark><em><mark
-									class="highlight-gray">2022</mark></em></p><p
-							id="95acc733-ca38-401e-b413-138d13771095" class>Algorithm &amp; AI,
+									class="highlight-gray">2022</mark></em></p>
+						<p id="95acc733-ca38-401e-b413-138d13771095" class>Algorithm &amp; AI,
 							Network &amp; System Administration, Graphics, Unix, Imperative
-							Programming in C, Object Oriented Programming in C++ and more.</p></div></details><details
-					open><summary
-						style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">MSc.<strong>
-							in Economics and Financial Engineering</strong></summary><div
-						class="indented"><p id="9984aadc-987a-4c0b-8389-92a473d259b6" class><mark
+							Programming in C, Object Oriented Programming in C++ and more.</p>
+					</div>
+				</details>
+				<details open>
+					<summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">MSc.<strong>
+							in Economics and Financial Engineering</strong></summary>
+					<div class="indented">
+						<p id="9984aadc-987a-4c0b-8389-92a473d259b6" class><mark
 								class="highlight-gray">Paris-Dauphine University, </mark><mark
-								class="highlight-gray"><em>Paris, France - 2020</em></mark></p><p
-							id="ccfef7b2-6214-4bd0-a489-ede4abcb3218" class>Stochastic Calculus,
+								class="highlight-gray"><em>Paris, France - 2020</em></mark></p>
+						<p id="ccfef7b2-6214-4bd0-a489-ede4abcb3218" class>Stochastic Calculus,
 							Derivatives, Portfolio Management, Machine Learning, Factorial Analysis,
-							C#, C++, Python, R, Risks Management</p></div></details><details open><summary
-						style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><strong>Bachelor&#x27;s
-							Degree in Applied Economics</strong></summary><div class="indented"><p
-							id="3636786b-2068-46d4-ae8d-fce4bb28a0aa" class><mark
+							C#, C++, Python, R, Risks Management</p>
+					</div>
+				</details>
+				<details open>
+					<summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><strong>Bachelor&#x27;s
+							Degree in Applied Economics</strong></summary>
+					<div class="indented">
+						<p id="3636786b-2068-46d4-ae8d-fce4bb28a0aa" class><mark
 								class="highlight-gray">Paris-Dauphine University, </mark><mark
-								class="highlight-gray"><em>Paris, France - 2017</em></mark></p><p
-							id="7891c3dc-3074-410f-81a0-2a1e2938c03f" class>Statistics, Econometrics,
-							International Economics, Financial Analysis, Financial Markets, Applied
-							Mathematics, VBA, SQL</p></div></details><h1
-					id="9a06ed4f-f662-4603-b74e-c39f4acf66be" class>Work experience</h1><hr
-					id="de35844c-7d22-4bdc-8b41-2326b6a3724a" /><details open><summary
-						style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Decision
-						Scientist, Digital Marketing Intelligence</summary><div class="indented"><p
-							id="afeb3a2a-d56f-416e-9c6b-fc3e616f015d" class><mark
-								class="highlight-gray">Vinted</mark><mark class="highlight-gray"><em>,
-									Berlin, Germany – Since 2022</em></mark></p><p
-							id="374db361-9a66-4c2e-ac9c-d5a603d36608" class>Designing and
+								class="highlight-gray"><em>Paris, France - 2017</em></mark></p>
+						<p id="7891c3dc-3074-410f-81a0-2a1e2938c03f" class>Statistics,
+							Econometrics, International Economics, Financial Analysis, Financial
+							Markets, Applied Mathematics, VBA, SQL</p>
+					</div>
+				</details>
+				<h1 id="9a06ed4f-f662-4603-b74e-c39f4acf66be" class>Work experience</h1>
+				<hr id="de35844c-7d22-4bdc-8b41-2326b6a3724a" />
+				<details open>
+					<summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Decision
+						Scientist, Digital Marketing Intelligence</summary>
+					<div class="indented">
+						<p id="afeb3a2a-d56f-416e-9c6b-fc3e616f015d" class><mark
+								class="highlight-gray">Vinted</mark><mark
+								class="highlight-gray"><em>,
+									Berlin, Germany – Since 2022</em></mark></p>
+						<p id="374db361-9a66-4c2e-ac9c-d5a603d36608" class>Designing and
 							implementing complex pipelines to measure the effectiveness of marketing
 							strategies, creating new metrics to translate users behaviour to
 							actionable insights and collaborating closely with other data scientists,
 							analysts and engineers, as well as campaign managers to drive business
-							impact and improve marketing campaigns efficiency.</p></div></details><details
-					open><summary
-						style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Data
-						Science &amp; Analytics Intern, Digital Marketing Intelligence</summary><div
-						class="indented"><p
-							id="6e320456-8b0b-457e-8bc5-477d4fd03c30" class><mark
-								class="highlight-gray">Vinted</mark><mark class="highlight-gray"><em>,
-									Berlin, Germany – Summer 2022</em></mark></p><p
-							id="e961d9dd-627d-4541-b6bd-d0ce72615b8f" class>Created a fully automated
+							impact and improve marketing campaigns efficiency.</p>
+					</div>
+				</details>
+				<details open>
+					<summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Data
+						Science &amp; Analytics Intern, Digital Marketing Intelligence</summary>
+					<div class="indented">
+						<p id="6e320456-8b0b-457e-8bc5-477d4fd03c30" class><mark
+								class="highlight-gray">Vinted</mark><mark
+								class="highlight-gray"><em>,
+									Berlin, Germany – Summer 2022</em></mark></p>
+						<p id="e961d9dd-627d-4541-b6bd-d0ce72615b8f" class>Created a fully
+							automated
 							sentiment analysis and topic modelling tool for Trustpilot reviews of
 							Vinted. Gained experience in data scraping and processing, model
-							inference in PySpark, dashboard construction Looker.</p></div></details><details
-					open><summary
-						style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Quantitative
-						Analyst</summary><div class="indented"><p
-							id="b922d6ab-872d-4bee-b752-b55015c1b100" class><mark
-								class="highlight-gray">Natixis Investment Managers International</mark><mark
-								class="highlight-gray"><em>, Paris, France – 2019-2020</em></mark></p><p
-							id="1e5d22d8-4b67-490d-87f9-1a8cdf72ec63" class>One year apprenticeship
+							inference in PySpark, dashboard construction Looker.</p>
+					</div>
+				</details>
+				<details open>
+					<summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Quantitative
+						Analyst</summary>
+					<div class="indented">
+						<p id="b922d6ab-872d-4bee-b752-b55015c1b100" class><mark
+								class="highlight-gray">Natixis Investment
+								Managers International</mark><mark class="highlight-gray"><em>, Paris,
+									France –
+									2019-2020</em></mark></p>
+						<p id="1e5d22d8-4b67-490d-87f9-1a8cdf72ec63" class>One year apprenticeship
 							at Natixis IM contributing to the development of decision-support tools
 							and algorithm, from building the solution to industrialising it, as well
-							as applied researching in quantitative finance.</p></div></details><details
-					open><summary
-						style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Structured
-						Products Engineer Intern</summary><div class="indented"><p
-							id="326e6d0e-46d5-4588-9167-9246c0c2c650" class><mark
-								class="highlight-gray">Société Générale CIB</mark><mark
-								class="highlight-gray"><em>, Paris, France – 2018</em></mark></p><p
-							id="ffa216d5-8725-4526-84a9-719b71eea2ea" class>6-months internship in
+							as applied researching in quantitative finance.</p>
+					</div>
+				</details>
+				<details open>
+					<summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Structured
+						Products Engineer Intern</summary>
+					<div class="indented">
+						<p id="326e6d0e-46d5-4588-9167-9246c0c2c650" class><mark
+								class="highlight-gray">Société Générale
+								CIB</mark><mark class="highlight-gray"><em>, Paris, France – 2018</em></mark></p>
+						<p id="ffa216d5-8725-4526-84a9-719b71eea2ea" class>6-months internship in
 							the trading room, assisting in the issuance of Structured Products for
-							the EMEA sales desks.</p></div></details><details open><summary
-						style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Quantitative
-						Research Intern</summary><div class="indented"><p
-							id="ecb7122a-d5b4-4482-84b0-f6bd15330696" class><mark
-								class="highlight-gray">B&amp;CO</mark><mark class="highlight-gray"><em>,
-									Paris, France – 2018</em></mark></p><p
-							id="b16dd09e-a89c-4089-9b1d-0472db33436d" class>6-months internship in
+							the EMEA sales desks.</p>
+					</div>
+				</details>
+				<details open>
+					<summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Quantitative
+						Research Intern</summary>
+					<div class="indented">
+						<p id="ecb7122a-d5b4-4482-84b0-f6bd15330696" class><mark
+								class="highlight-gray">B&amp;CO</mark><mark
+								class="highlight-gray"><em>,
+									Paris, France – 2018</em></mark></p>
+						<p id="b16dd09e-a89c-4089-9b1d-0472db33436d" class>6-months internship in
 							the quantitative research team of an independent consulting and
-							quantitative research firm in Finance</p><p
-							id="7b7262fa-c118-4c38-8688-1087c6d0aada" class>
-						</p></div></details><h1 id="dc9ebe49-320a-45c1-b02f-7e55620e0a74" class>Side
-					projects</h1><hr id="eaf9c1fe-9d68-4d89-8613-9926cf611cb9" /><details open><summary
-						style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Hand2Text</summary><div
-						class="indented"><p id="8de6c39b-884b-4a4b-b21d-0b44fd13dcd8" class>Co-developer
+							quantitative research firm in Finance</p>
+						<p id="7b7262fa-c118-4c38-8688-1087c6d0aada" class>
+						</p>
+					</div>
+				</details>
+				<h1 id="dc9ebe49-320a-45c1-b02f-7e55620e0a74" class>Side
+					projects</h1>
+				<hr id="eaf9c1fe-9d68-4d89-8613-9926cf611cb9" />
+				<details open>
+					<summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Hand2Text</summary>
+					<div class="indented">
+						<p id="8de6c39b-884b-4a4b-b21d-0b44fd13dcd8" class>Co-developer
 							of a project translating sign language to written English using computer
-							vision.</p><p id="4a645a25-ce6a-483d-a967-55421445cabc" class>Gained
+							vision.</p>
+						<p id="4a645a25-ce6a-483d-a967-55421445cabc" class>Gained
 							experienced with large dataset manipulation, storage and versioning (with
-							AWS bucket and DVC).</p><p id="6e60ff17-4031-4a6b-aae3-34a4a9e5686d"
-							class>🔗 <a href="https://github.com/42-AI/Hand2Text">GitHub</a></p></div></details><details
-					open><summary
-						style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Hackathon
-						#CloudForClimate by Google Cloud Platform</summary><div class="indented"><p
-							id="f82dc3a0-00ea-44f4-be8e-4bf22c6c9974" class>Collaborated on a project
-							predicting soil moisture from satellite imaging.</p><p
-							id="4d05a3ff-200c-4046-a96f-b47abbc86186" class>Developed a complex data
-							pipeline, training and inference framework on GCP.</p></div></details><h1
-					id="21ec2859-ec59-4fbc-a892-f7512e480876" class>Skills</h1><hr
-					id="3ecff8ff-0b9d-4049-85ea-1157265eef2b" /><h2
-					id="f1012e89-cf5f-4c99-abd1-5c243d6c60e9" class>Programming</h2><div
-					id="28f55618-150a-4310-9903-b7791af2b83b" class="column-list"><div
-						id="f1fb6864-f824-400f-9c7e-b5149276c3ad" style="width:50%" class="column"><ul
-							id="cdb1e196-5e74-40bb-a63e-2123e9df9073" class="toggle"><li><details
-									open><summary><strong>Python</strong></summary><p
-										id="3d537ee0-03b4-4c0a-8dc3-49ad7e6dfbb8" class>My favourite
+							AWS bucket and DVC).</p>
+						<p id="6e60ff17-4031-4a6b-aae3-34a4a9e5686d" class>🔗 <a
+								href="https://github.com/42-AI/Hand2Text">GitHub</a></p>
+					</div>
+				</details>
+				<details open>
+					<summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0">Hackathon
+						#CloudForClimate by Google Cloud Platform</summary>
+					<div class="indented">
+						<p id="f82dc3a0-00ea-44f4-be8e-4bf22c6c9974" class>Collaborated on a
+							project
+							predicting soil moisture from satellite imaging.</p>
+						<p id="4d05a3ff-200c-4046-a96f-b47abbc86186" class>Developed a complex
+							data
+							pipeline, training and inference framework on GCP.</p>
+					</div>
+				</details>
+				<h1 id="21ec2859-ec59-4fbc-a892-f7512e480876" class>Skills</h1>
+				<hr id="3ecff8ff-0b9d-4049-85ea-1157265eef2b" />
+				<h2 id="f1012e89-cf5f-4c99-abd1-5c243d6c60e9" class>Programming</h2>
+				<div id="28f55618-150a-4310-9903-b7791af2b83b" class="column-list">
+					<div id="f1fb6864-f824-400f-9c7e-b5149276c3ad" style="width:50%"
+						class="column">
+						<ul id="cdb1e196-5e74-40bb-a63e-2123e9df9073" class="toggle">
+							<li>
+								<details open>
+									<summary><strong>Python</strong></summary>
+									<p id="3d537ee0-03b4-4c0a-8dc3-49ad7e6dfbb8" class>My favourite
 										programming language. Probably because it’s the one I’ve used in the
 										projects I’m the most proud of. Among them Hand2Text, an AI that I’m
-										developing which will be able to translate sign language to text.</p></details></li></ul><ul
-							id="5f8fa0ab-7508-40d4-ae71-e847ca60b96a" class="toggle"><li><details
-									open><summary><strong>C</strong></summary><p
-										id="118750c1-ee08-4af9-974d-ca07e717f795" class>One of the programming
+										developing which will be able to translate sign language to text.</p>
+								</details>
+							</li>
+						</ul>
+						<ul id="5f8fa0ab-7508-40d4-ae71-e847ca60b96a" class="toggle">
+							<li>
+								<details open>
+									<summary><strong>C</strong></summary>
+									<p id="118750c1-ee08-4af9-974d-ca07e717f795" class>One of the
+										programming
 										language I’ve used the most in the past few years. Most of my projects
 										at 42 where developed in C. I’ve used it to build a simple shell
 										working just like bash, to develop a ray-tracing tool producing
 										gorgeous images from a basic map and to create a stack sorting
-										algorithm.</p></details></li></ul><ul
-							id="094ae0e3-543e-46a8-88f1-46663a6278e8" class="toggle"><li><details
-									open><summary><strong>VBA</strong></summary><p
-										id="e56385f4-b68c-493b-99ec-a7a5a86046f2" class>The very first
+										algorithm.</p>
+								</details>
+							</li>
+						</ul>
+						<ul id="094ae0e3-543e-46a8-88f1-46663a6278e8" class="toggle">
+							<li>
+								<details open>
+									<summary><strong>VBA</strong></summary>
+									<p id="e56385f4-b68c-493b-99ec-a7a5a86046f2" class>The very first
 										programming language I got familiar with. I’ve used it mainly as a
 										Financial Engineering student at University and while working in banks
 										to automate tasks in Excel as well as construct robust portfolio
-										optimisation models for Asset Managers.</p></details></li></ul><ul
-							id="e57534bb-8f2b-4d85-ab74-cb1f870b85a7" class="toggle"><li><details
-									open><summary><strong>Matlab</strong></summary><p
-										id="172721c4-f2aa-4a5a-8b2b-64061c5cd938" class>I’ve gotten familiar
+										optimisation models for Asset Managers.</p>
+								</details>
+							</li>
+						</ul>
+						<ul id="e57534bb-8f2b-4d85-ab74-cb1f870b85a7" class="toggle">
+							<li>
+								<details open>
+									<summary><strong>Matlab</strong></summary>
+									<p id="172721c4-f2aa-4a5a-8b2b-64061c5cd938" class>I’ve gotten familiar
 										with this language through my Econometrics classes at Uni. We would
 										use it to build Principal Component Analysis or Factorial Analysis
-										tools.</p></details></li></ul><ul
-							id="73929374-f0ae-4caa-82d5-9fee76d4012d" class="toggle"><li><details
-									open><summary><strong>Lookml</strong></summary><p
-										id="1bbcc718-d990-4108-8ed4-9ad5b0726440" class>
-									</p></details></li></ul></div><div
-						id="9db294e1-1029-45f5-9e31-b56b8e4c16b4" style="width:50%" class="column"><ul
-							id="9ac40c7f-b966-47cb-bb01-3519c0eb4259" class="toggle"><li><details
-									open><summary><strong>Javascript</strong></summary><p
-										id="845cfd40-d696-49ef-a281-b78d6d98626e" class>The very last language
+										tools.</p>
+								</details>
+							</li>
+						</ul>
+						<ul id="73929374-f0ae-4caa-82d5-9fee76d4012d" class="toggle">
+							<li>
+								<details open>
+									<summary><strong>Lookml</strong></summary>
+									<p id="1bbcc718-d990-4108-8ed4-9ad5b0726440" class>
+									</p>
+								</details>
+							</li>
+						</ul>
+					</div>
+					<div id="9db294e1-1029-45f5-9e31-b56b8e4c16b4" style="width:50%"
+						class="column">
+						<ul id="9ac40c7f-b966-47cb-bb01-3519c0eb4259" class="toggle">
+							<li>
+								<details open>
+									<summary><strong>Javascript</strong></summary>
+									<p id="845cfd40-d696-49ef-a281-b78d6d98626e" class>The very last
+										language
 										I learned in 42 Paris. I’ve used it to build a single page application
 										enabling users to play Pong. This website was build using Vue in the
-										front and Node in the back.</p></details></li></ul><ul
-							id="a519cb0c-fbf7-4685-9153-91147821283a" class="toggle"><li><details
-									open><summary><strong>C++</strong></summary><p
-										id="36631eae-62d5-4b2b-b4ec-d0d605714883" class>A language I’ve
+										front and Node in the back.</p>
+								</details>
+							</li>
+						</ul>
+						<ul id="a519cb0c-fbf7-4685-9153-91147821283a" class="toggle">
+							<li>
+								<details open>
+									<summary><strong>C++</strong></summary>
+									<p id="36631eae-62d5-4b2b-b4ec-d0d605714883" class>A language I’ve
 										acquired a strong knowledge of by re-coding a large part of its
 										containers library. Thanks to that I was then able to build an IRC
-										server in C++.</p></details></li></ul><ul
-							id="7ceb37db-4211-48ab-8d8b-611e6410c555" class="toggle"><li><details
-									open><summary><strong>R</strong></summary><p
-										id="483c2689-8c1c-4d45-821d-bc0273360487" class>I’ve used R mainly
+										server in C++.</p>
+								</details>
+							</li>
+						</ul>
+						<ul id="7ceb37db-4211-48ab-8d8b-611e6410c555" class="toggle">
+							<li>
+								<details open>
+									<summary><strong>R</strong></summary>
+									<p id="483c2689-8c1c-4d45-821d-bc0273360487" class>I’ve used R mainly
 										while working as a Quantitative Analyst at Natixis to improve my VBA
-										models performances and reduce their computation time.</p></details></li></ul><ul
-							id="06634eb0-2b71-4438-9a6f-2c5072fee729" class="toggle"><li><details
-									open><summary><strong>Scala/Spark</strong></summary><p
-										id="50acd95c-a216-4337-971a-7b69cca331b6" class>As a Decision
+										models performances and reduce their computation time.</p>
+								</details>
+							</li>
+						</ul>
+						<ul id="06634eb0-2b71-4438-9a6f-2c5072fee729" class="toggle">
+							<li>
+								<details open>
+									<summary><strong>Scala/Spark</strong></summary>
+									<p id="50acd95c-a216-4337-971a-7b69cca331b6" class>As a Decision
 										Scientist at Vinted, Scala/Spark is my main coding language in my job.
 										I use it for tasks such as maintaining/updating the data pipeline,
 										improving code sustainability, and creating new jobs (including
-										incremental ones).</p></details></li></ul><ul
-							id="7c69cee3-0c42-40d6-96da-cae630dd0388" class="toggle"><li><details
-									open><summary><strong>ASM</strong></summary><p
-										id="cbd62122-677e-49e0-b4b4-14efcef1750b" class>Probably the most
-										complicated language I have played with, but super interesting!</p></details></li></ul><ul
-							id="41c0684e-f1b2-4461-b9e2-b176ca113759" class="toggle"><li><details
-									open><summary><strong>SQL</strong></summary><p
-										id="25c92903-0062-453f-b40c-8c7fa63317a1" class>
-									</p></details></li></ul></div></div><h2
-					id="4fd6aeec-ddc5-4144-8b56-b5786c683d2c" class>Languages</h2><div
-					id="d9739026-3b9f-4813-8ebe-0915e094f098" class="column-list"><div
-						id="5dfc9afe-d56b-4adc-bac7-2e44021e82e3" style="width:17.5%"
-						class="column"><p id="36db410b-8c8a-45ec-bed9-6e3b1a02d789" class>🇫🇷
-							<strong>FR </strong>Native</p></div><div
-						id="2205dbf4-2a80-468b-9846-8567c4d8e919" style="width:17.5%"
-						class="column"><p id="9b47e537-13c2-4916-ac0a-357e4516626c" class>🇬🇧
-							<strong>EN </strong>Fluent</p></div><div
-						id="42af3299-cb6b-4753-8643-2bcd96f3303f"
-						style="width:27.500000000000004%" class="column"><p
-							id="c914d1bf-3f27-453d-bb36-99cb937caf4b" class>🇮🇹 <strong>IT </strong>Conversational</p></div><div
-						id="4c0f9ee9-2bec-415e-a75f-eb15cbff3428"
-						style="width:15.000000000000014%" class="column"><p
-							id="851caeea-d2a7-467c-b3f1-2577ea5be6c5" class>🇪🇸 <strong>ES </strong>Basic</p></div><div
-						id="6e1781bc-b4db-4ad0-920e-0cd754ecb71f" style="width:22.50000000000001%"
-						class="column"><p id="17b1d6e2-97eb-4800-b2a8-fbfe71331089" class>🇩🇪
-							<strong>DE</strong> Very basic</p></div></div><hr
-					id="f7c4d51c-3df2-4fa3-a43c-d1eb2f60012c" /><p
-					id="abd63b14-ae93-45d5-a095-12348827dfca" class>
-				</p></div></article><span class="sans"
-			style="font-size:14px;padding-top:2em"></span></body></html>
+										incremental ones).</p>
+								</details>
+							</li>
+						</ul>
+						<ul id="7c69cee3-0c42-40d6-96da-cae630dd0388" class="toggle">
+							<li>
+								<details open>
+									<summary><strong>ASM</strong></summary>
+									<p id="cbd62122-677e-49e0-b4b4-14efcef1750b" class>Probably the most
+										complicated language I have played with, but super interesting!</p>
+								</details>
+							</li>
+						</ul>
+						<ul id="41c0684e-f1b2-4461-b9e2-b176ca113759" class="toggle">
+							<li>
+								<details open>
+									<summary><strong>SQL</strong></summary>
+									<p id="25c92903-0062-453f-b40c-8c7fa63317a1" class>
+									</p>
+								</details>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<h2 id="4fd6aeec-ddc5-4144-8b56-b5786c683d2c" class>Languages</h2>
+				<div id="d9739026-3b9f-4813-8ebe-0915e094f098" class="column-list">
+					<div id="5dfc9afe-d56b-4adc-bac7-2e44021e82e3" style="width:17.5%"
+						class="column">
+						<p id="36db410b-8c8a-45ec-bed9-6e3b1a02d789" class>🇫🇷
+							<strong>FR </strong>Native
+						</p>
+					</div>
+					<div id="2205dbf4-2a80-468b-9846-8567c4d8e919" style="width:17.5%"
+						class="column">
+						<p id="9b47e537-13c2-4916-ac0a-357e4516626c" class>🇬🇧
+							<strong>EN </strong>Fluent
+						</p>
+					</div>
+					<div id="42af3299-cb6b-4753-8643-2bcd96f3303f"
+						style="width:27.500000000000004%" class="column">
+						<p id="c914d1bf-3f27-453d-bb36-99cb937caf4b" class>🇮🇹 <strong>IT
+							</strong>Conversational</p>
+					</div>
+					<div id="4c0f9ee9-2bec-415e-a75f-eb15cbff3428"
+						style="width:15.000000000000014%" class="column">
+						<p id="851caeea-d2a7-467c-b3f1-2577ea5be6c5" class>🇪🇸 <strong>ES
+							</strong>Basic</p>
+					</div>
+					<div id="6e1781bc-b4db-4ad0-920e-0cd754ecb71f"
+						style="width:22.50000000000001%" class="column">
+						<p id="17b1d6e2-97eb-4800-b2a8-fbfe71331089" class>🇩🇪
+							<strong>DE</strong> Very basic
+						</p>
+					</div>
+				</div>
+				<hr id="f7c4d51c-3df2-4fa3-a43c-d1eb2f60012c" />
+				<p id="abd63b14-ae93-45d5-a095-12348827dfca" class>
+				</p>
+			</div>
+		</article><span class="sans" style="font-size:14px;padding-top:2em"></span>
+	</body>
+
+</html>
