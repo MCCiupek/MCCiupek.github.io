@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ name }}</title>
+  <style>
+    :root {
+      --color-bg: #ffffff;
+      --color-text: #1a1a2e;
+      --color-muted: #6b7280;
+      --color-accent: #2563eb;
+      --color-accent-light: #dbeafe;
+      --color-border: #e5e7eb;
+      --color-section-bg: #f9fafb;
+      --color-tag-bg: #f3f4f6;
+      --font-sans: 'Inter', ui-sans-serif, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Helvetica, Arial, sans-serif;
+      --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, Consolas,
+        monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-bg: #0f172a;
+        --color-text: #e2e8f0;
+        --color-muted: #94a3b8;
+        --color-accent: #60a5fa;
+        --color-accent-light: #1e3a5f;
+        --color-border: #334155;
+        --color-section-bg: #1e293b;
+        --color-tag-bg: #334155;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--color-accent);
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    a:hover {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    /* --- Header --- */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .header-photo {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-accent-light);
+      flex-shrink: 0;
+    }
+
+    .header-name {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.875rem;
+      color: var(--color-muted);
+    }
+
+    .contact-item a {
+      color: var(--color-text);
+    }
+
+    /* --- Sections --- */
+    .section {
+      margin-bottom: 2.25rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-accent);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    /* --- Entry (work, education, project) --- */
+    .entry {
+      margin-bottom: 1.25rem;
+    }
+
+    .entry-header {
+      cursor: pointer;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .entry-toggle {
+      font-size: 0.7rem;
+      color: var(--color-muted);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+      user-select: none;
+      position: relative;
+      top: -1px;
+    }
+
+    .entry[open] > .entry-header .entry-toggle {
+      transform: rotate(90deg);
+    }
+
+    .entry-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .entry-meta {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    .entry-subtitle {
+      font-size: 0.875rem;
+      color: var(--color-muted);
+      margin-top: 0.15rem;
+      padding-left: 1.25rem;
+    }
+
+    .entry-body {
+      padding-left: 1.25rem;
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+      color: var(--color-text);
+      line-height: 1.65;
+    }
+
+    .entry-body p {
+      margin-bottom: 0.4rem;
+    }
+
+    /* --- Project items list --- */
+    .project-list {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .project-list li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.3rem;
+      font-size: 0.875rem;
+    }
+
+    .project-list li::before {
+      content: '>';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-family: var(--font-mono);
+      font-weight: 600;
+    }
+
+    .project-list code {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      background: var(--color-tag-bg);
+      padding: 0.1em 0.4em;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    /* --- Skills --- */
+    .skills-grid {
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .skill-row {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .skill-category {
+      font-weight: 600;
+      white-space: nowrap;
+      min-width: fit-content;
+    }
+
+    .skill-value {
+      color: var(--color-muted);
+    }
+
+    /* --- Languages --- */
+    .languages-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .language-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.9rem;
+    }
+
+    .language-code {
+      font-weight: 700;
+    }
+
+    .language-level {
+      color: var(--color-muted);
+    }
+
+    /* --- Print --- */
+    @media print {
+      body {
+        font-size: 12px;
+      }
+      .container {
+        padding: 0;
+        max-width: 100%;
+      }
+      .entry {
+        break-inside: avoid;
+      }
+      a {
+        color: var(--color-text);
+      }
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 600px) {
+      .header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .header-name {
+        font-size: 1.5rem;
+      }
+      .contact-row {
+        justify-content: center;
+      }
+      .entry-header {
+        flex-direction: column;
+        gap: 0.15rem;
+      }
+      .entry-meta {
+        margin-left: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Header -->
+    <div class="header">
+      {% if photo %}<img class="header-photo" src="{{ photo }}" alt="{{ name }}">{% endif %}
+      <h1 class="header-name">{{ name }}</h1>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-row">
+      {% for c in contact %}
+      <span class="contact-item">{{ c.icon }} <a href="{{ c.url }}">{{ c.label }}</a></span>
+      {% endfor %}
+    </div>
+
+    <!-- Work Experience -->
+    <section class="section">
+      <h2 class="section-title">Work Experience</h2>
+      {% for job in work_experience %}
+      <details class="entry"{% if job.open %} open{% endif %}>
+        <summary class="entry-header">
+          <span class="entry-toggle">&#9654;</span>
+          <span class="entry-title">{{ job.title }}</span>
+          <span class="entry-meta">{{ job.dates }}</span>
+        </summary>
+        <div class="entry-subtitle">{{ job.company }}, {{ job.location }}</div>
+        <div class="entry-body"><p>{{ job.description }}</p></div>
+      </details>
+      {% endfor %}
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      {% for edu in education %}
+      <details class="entry"{% if edu.open %} open{% endif %}>
+        <summary class="entry-header">
+          <span class="entry-toggle">&#9654;</span>
+          <span class="entry-title">{{ edu.title }}</span>
+          <span class="entry-meta">{{ edu.year }}</span>
+        </summary>
+        <div class="entry-subtitle">{{ edu.institution }}, {{ edu.location }}</div>
+        <div class="entry-body">
+          <p>{{ edu.description }}</p>
+          {% if edu.projects %}
+          <p>{{ edu.extra_label }}</p>
+          <ul class="project-list">
+            {% for item in edu.projects %}
+            <li><code>{{ item.code }}</code>: {{ item.text }} (<a href="{{ item.url }}">GitHub</a>)</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+      </details>
+      {% endfor %}
+    </section>
+
+    <!-- Side Projects -->
+    <section class="section">
+      <h2 class="section-title">Side Projects</h2>
+      {% for proj in side_projects %}
+      <details class="entry"{% if proj.open %} open{% endif %}>
+        <summary class="entry-header">
+          <span class="entry-toggle">&#9654;</span>
+          <span class="entry-title">{{ proj.title }}</span>
+          <span class="entry-meta">{{ proj.dates }}</span>
+        </summary>
+        <div class="entry-body">
+          <p>{{ proj.description }}</p>
+          {% if proj.extra %}<p>{{ proj.extra }}</p>{% endif %}
+          {% if proj.links %}
+          <p>{% for link in proj.links %}{{ link.icon }} <a href="{{ link.url }}">{{ link.label }}</a> {% endfor %}</p>
+          {% endif %}
+        </div>
+      </details>
+      {% endfor %}
+    </section>
+
+    <!-- Skills -->
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        {% for skill in skills.technical %}
+        <div class="skill-row">
+          <span class="skill-category">{{ skill.category }}:</span>
+          <span class="skill-value">{{ skill.value }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="section">
+      <h2 class="section-title">Languages</h2>
+      <div class="languages-row">
+        {% for lang in skills.languages %}
+        <span class="language-item">{{ lang.flag }} <span class="language-code">{{ lang.code }}</span> <span class="language-level">{{ lang.level }}</span></span>
+        {% endfor %}
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

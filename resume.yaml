@@ -1,0 +1,188 @@
+name: Clemence Ciupek
+photo: assets/mciupek.png
+
+contact:
+  - icon: "\U0001F4DE"
+    label: "(+33)6 65 19 82 81"
+    url: "tel:+33665198281"
+  - icon: "\U0001F4E7"
+    label: "mc@42ai.fr"
+    url: "mailto:mc@42ai.fr"
+  - icon: "\U0001F517"
+    label: "LinkedIn"
+    url: "https://www.linkedin.com/in/cl%C3%A9mence-ciupek-9b76a8108/"
+  - icon: "\U0001F4BE"
+    label: "GitHub"
+    url: "https://github.com/MCCiupek"
+
+work_experience:
+  - title: Analytics Engineer, Order Purchase & Revenue
+    company: Vinted
+    location: Berlin, Germany
+    dates: Since March 2024
+    open: true
+    description: >
+      Engineering comprehensive analytics reporting models, from ingestion to
+      visualisation with cloud-based tools. Collaborating with cross-functional
+      teams, including engineering and data teams, to design and implement
+      scalable event-driven data architectures. Participating in migration to
+      cloud based data warehouse.
+
+  - title: Decision Scientist, Marketing
+    company: Vinted
+    location: Berlin, Germany
+    dates: Sept 2022 - March 2024
+    open: true
+    description: >
+      Designing and implementing complex pipelines to measure the effectiveness
+      of marketing strategies, creating new metrics to translate users behaviour
+      to actionable insights and collaborating closely with other data scientists,
+      analysts and engineers, as well as campaign managers to drive business
+      impact and improve marketing campaigns efficiency.
+
+  - title: Data Science & Analytics Intern, Marketing
+    company: Vinted
+    location: Berlin, Germany
+    dates: Summer 2022
+    open: true
+    description: >
+      Developing a comprehensive automated tool for sentiment analysis and topic
+      modelling of Trustpilot reviews related to Vinted. This project provided
+      hands-on experience in data scraping and processing, model inference using
+      PySpark, and constructing data visualisation dashboards in Looker.
+
+  - title: Quantitative Analyst
+    company: Natixis Investment Managers International
+    location: Paris, France
+    dates: 2019-2020
+    open: false
+    description: >
+      One year apprenticeship at Natixis IM contributing to the development of
+      decision-support tools and algorithm, from building the solution to
+      industrialising it, as well as applied researching in quantitative finance.
+
+  - title: Structured Products Engineer Intern
+    company: "Société Générale CIB"
+    location: Paris, France
+    dates: "2018"
+    open: false
+    description: >
+      6-months internship in the trading room, assisting in the issuance of
+      Structured Products for the EMEA sales desks.
+
+  - title: Quantitative Research Intern
+    company: "B&CO"
+    location: Paris, France
+    dates: "2018"
+    open: false
+    description: >
+      6-months internship in the quantitative research team of an independent
+      consulting and quantitative research firm in Finance.
+
+education:
+  - title: "Software Engineering @42Paris"
+    institution: "Ecole 42"
+    location: "Paris, France"
+    year: "2022"
+    open: true
+    description: >
+      Algorithm & AI, Network & System Administration, Graphics, Unix,
+      Imperative Programming in C, Object Oriented Programming in C++ and more.
+    extra_label: "Example projects:"
+    projects:
+      - text: "write a custom IRC server working with a real IRC client"
+        code: ft_irc
+        url: "https://github.com/MCCiupek/ft_irc"
+      - text: "re-implement the various container types of the C++ std library"
+        code: ft_containers
+        url: "https://github.com/MCCiupek/ft_containers"
+      - text: "create a simple shell in C"
+        code: minishell
+        url: "https://github.com/MCCiupek/minishell"
+      - text: "deploy a LEMP stack with Wordpress using docker-compose"
+        code: inception
+        url: "https://github.com/MCCiupek/inception"
+      - text: "ray tracing in C"
+        code: miniRT
+        url: "https://github.com/MCCiupek/miniRT"
+
+  - title: "MSc. in Economics and Financial Engineering"
+    institution: "PSL University (Dauphine)"
+    location: "Paris, France"
+    year: "2020"
+    open: false
+    description: >
+      Stochastic Calculus, Derivatives, Portfolio Management, Machine Learning,
+      Factorial Analysis, C#, C++, Python, R, Risks Management
+
+  - title: "Bachelor's Degree in Applied Economics"
+    institution: "PSL University (Dauphine)"
+    location: "Paris, France"
+    year: "2017"
+    open: false
+    description: >
+      Statistics, Econometrics, International Economics, Financial Analysis,
+      Financial Markets, Applied Mathematics, VBA, SQL
+
+side_projects:
+  - title: "SynthLab @[FabLab NK](https://workish.berlin/fablab)"
+    dates: Since November 2024
+    open: true
+    description: >
+      Working on DIY audio hardware projects such as Eurorack modules, analog
+      and digital synthesisers, guitar pedals and other devices.
+    extra: >
+      Participating in [SUPERBOOTH25](https://www.superbooth.com/en/), an
+      international trade fair and festival for electronic musical instruments
+      in Berlin.
+
+  - title: Hand2Text
+    dates: "2023"
+    open: true
+    description: >
+      Co-developer of an open-source project translating sign language to
+      written English using computer vision. Gained experienced with large
+      dataset manipulation, storage and versioning (with AWS bucket and DVC).
+    links:
+      - icon: "\U0001F517"
+        label: GitHub
+        url: "https://github.com/42-AI/Hand2Text"
+
+  - title: "Hackathon #CloudForClimate by Google Cloud Platform"
+    dates: "2022"
+    open: true
+    description: >
+      Collaborated on a project predicting soil moisture from satellite imaging.
+      Developed a complex data pipeline, training and inference framework on GCP.
+
+skills:
+  technical:
+    - category: Programming Languages
+      value: "Python, Scala, Spark, C, C++, C#, R, VBA, Matlab, Assembly"
+    - category: SQL
+      value: "Proficient in writing SQL queries, data manipulation, and database management"
+    - category: Deep Learning Framework
+      value: "Experienced in working with PyTorch for deep learning projects"
+    - category: Data Visualisation
+      value: "Experience with data visualisation tools like Looker and Tableau"
+    - category: Version Control
+      value: "Familiar with Git for code versioning and DVC (Data Version Control) for efficient data management"
+    - category: Cloud Services
+      value: "Experienced with GCP and AWS, including data storage, access, versioning, deep learning algorithm training, and inference."
+
+  languages:
+    - flag: "\U0001F1EB\U0001F1F7"
+      code: FR
+      level: Native
+    - flag: "\U0001F1EC\U0001F1E7"
+      code: EN
+      level: Fluent
+    - flag: "\U0001F1EE\U0001F1F9"
+      code: IT
+      level: Conversational
+    - flag: "\U0001F1EA\U0001F1F8"
+      code: ES
+      level: Conversational
+    - flag: "\U0001F1E9\U0001F1EA"
+      code: DE
+      level: Basic
